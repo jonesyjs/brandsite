@@ -1,34 +1,29 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: rgb(244, 244, 244);
-    --foreground: rgb(26, 26, 26);
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
   }
 }
 
-/* Global reset and layout */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.6;
-}
-
+/* Basic layout and typography */
 main {
   max-width: 800px;
   margin: 0 auto;
@@ -36,31 +31,16 @@ main {
 }
 
 /* Typography spacing */
-h1,
-h2 {
+h1, h2 {
   margin-bottom: 3rem;
+}
+
+section {
+  margin-top: 3rem;
 }
 
 p + p {
   margin-top: 1rem;
-}
-
-p + ul {
-  margin-top: 0rem;
-}
-
-p:has(+ ul) {
-  line-height: 1.4;
-}
-
-p:has(+ ol) {
-  line-height: 1;
-}
-
-/* Links */
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
 /* Lists */
@@ -73,15 +53,4 @@ ul {
 
 ul li::before {
   content: "> ";
-}
-
-ol {
-  padding-left: 2rem;
-  margin: 1rem 0;
-  line-height: 1.4;
-}
-
-/* Sections */
-section {
-  margin-top: 3rem;
 }
