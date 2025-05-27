@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Theme Definitions */
+:root {
+  --primary: #1a1a1a;
+  --secondary: #f4f4f4;
+  --accent: #6366f1;
+}
+
+[data-theme='leesimons'] {
+  --primary: #1a1a1a;
+  --secondary: #f4f4f4;
+  --accent: #6366f1;
+}
+
+[data-theme='productOne'] {
+  --primary: #2563eb;
+  --secondary: #ffffff;
+  --accent: #f59e0b;
+}
+
+/* Original Article Styles */
 @layer base {
   :root {
     --background: 0 0% 100%;

@@ -1,11 +1,9 @@
 export default function Home() {
   return (
-    <div>
-      <main>
+    <main>
+      <h1>
         Site Coming Soon
-      </main>
-      <footer>
-      </footer>
-    </div>
+      </h1>
+    </main>
   );
 }
